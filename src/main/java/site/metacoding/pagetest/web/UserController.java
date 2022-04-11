@@ -1,5 +1,8 @@
 package site.metacoding.pagetest.web;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +15,13 @@ import site.metacoding.pagetest.service.UserService;
 @Controller
 public class UserController {
     private final UserService userService;
+    private final HttpSession session;
+
+    // @GetMapping("/logout")
+    // public String logout() {
+    // session.invalidate(); // 세션 무효화 (세션 아이디 영역의 데이터를 다 삭제해)
+    // return "redirect:/";
+    // }
 
     @GetMapping("/joinForm")
     public String joinForm() {

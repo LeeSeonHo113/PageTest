@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @Data
 @EntityListeners(AuditingEntityListener.class)
 @Entity
-public class Usertbl {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,6 +45,9 @@ public class Usertbl {
     @Pattern(regexp = "(01[016789])(\\d{3,4})(\\d{4})", message = "올바른 휴대폰 번호를 입력해주세요.")
     @Column(nullable = false, length = 300)
     private String phone; // API 주소 라이브러리 사용할 예정
+
+    @Column(nullable = true, length = 300)
+    private String profileImg; // 이미지 파일 전송 받아서 서버에 두고, 그 경로를 디비에 저장
 
     @CreatedDate
     private LocalDateTime createDate;

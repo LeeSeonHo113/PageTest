@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.pagetest.domain.Usertbl;
+import site.metacoding.pagetest.domain.User;
 import site.metacoding.pagetest.domain.UserRepository;
 import site.metacoding.pagetest.web.api.dto.user.JoinDto;
 import site.metacoding.pagetest.web.api.dto.user.LoginDto;
@@ -20,10 +20,10 @@ public class UserService {
         userRepository.save(joinDto.toEntity());
     }
 
-    public Usertbl 로그인(LoginDto loginDto) {
+    public User 로그인(LoginDto loginDto) {
         // 로그인 처리 쿼리를 JPA에서 제공해주지 않는다.
         // SELECT * FROM user WHERE username=:username AND password = :password
-        Usertbl userEntity = userRepository.mLogin(loginDto.getUsername(), loginDto.getPassword());
+        User userEntity = userRepository.mLogin(loginDto.getUsername(), loginDto.getPassword());
         return userEntity;
     }
 
