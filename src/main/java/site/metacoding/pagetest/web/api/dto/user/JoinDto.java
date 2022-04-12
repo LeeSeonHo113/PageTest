@@ -3,7 +3,9 @@ package site.metacoding.pagetest.web.api.dto.user;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import site.metacoding.pagetest.domain.User;
+import site.metacoding.pagetest.domain.user.User;
+
+// DTO : Data Transper Object (통신으로 전달하거나 받는 오브젝트)
 
 @AllArgsConstructor
 @NoArgsConstructor

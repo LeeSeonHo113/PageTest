@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.pagetest.domain.User;
+import site.metacoding.pagetest.domain.user.User;
 import site.metacoding.pagetest.service.UserService;
 import site.metacoding.pagetest.web.api.dto.ResponseDto;
 import site.metacoding.pagetest.web.api.dto.user.JoinDto;

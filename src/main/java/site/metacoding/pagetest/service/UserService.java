@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.pagetest.domain.User;
-import site.metacoding.pagetest.domain.UserRepository;
+import site.metacoding.pagetest.domain.user.User;
+import site.metacoding.pagetest.domain.user.UserRepository;
 import site.metacoding.pagetest.web.api.dto.user.JoinDto;
 import site.metacoding.pagetest.web.api.dto.user.LoginDto;
 

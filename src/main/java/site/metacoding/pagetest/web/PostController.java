@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.pagetest.domain.User;
 import site.metacoding.pagetest.domain.comment.Comment;
 import site.metacoding.pagetest.domain.post.Post;
+import site.metacoding.pagetest.domain.user.User;
 import site.metacoding.pagetest.service.PostService;
 import site.metacoding.pagetest.web.api.dto.comment.CommentResponseDto;
 
@@ -35,7 +35,7 @@ public class PostController {
             dto.setComment(comment);
 
             if (principal != null) {
-                if (principal.getId() == comment.getUser().getId()) {
+                if (principal.getId() == comment.getId()) {
                     dto.setAuth(true); // or false
                 } else {
                     dto.setAuth(false); // or false
@@ -52,6 +52,8 @@ public class PostController {
         return "post/detail";
     }
 
+    // 페이지 주기
+    // /s 붙었으니까 자동으로 인터셉터가 인증 체크함. (완료)
     @GetMapping("/s/post/writeForm")
     public String writeForm() {
         return "post/writeForm";

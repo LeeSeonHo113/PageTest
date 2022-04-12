@@ -1,4 +1,4 @@
-package site.metacoding.pagetest.domain;
+package site.metacoding.pagetest.domain.user;
 
 import java.time.LocalDateTime;
 
@@ -30,6 +30,8 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    private String imgurl; // 사진의 경로
 
     @NotBlank(message = "아이디를 입력해주세요.")
     @Size(min = 2, max = 12, message = "아이디는 2자 이상 12자 이하로 입력해주세요.")

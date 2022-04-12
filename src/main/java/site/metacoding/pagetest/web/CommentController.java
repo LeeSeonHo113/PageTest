@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.pagetest.domain.User;
 import site.metacoding.pagetest.domain.comment.Comment;
+import site.metacoding.pagetest.domain.user.User;
 import site.metacoding.pagetest.service.CommentService;
 import site.metacoding.pagetest.web.api.dto.ResponseDto;
 
@@ -32,7 +32,7 @@ public class CommentController {
     }
 
     @PostMapping("/s/post/{postId}/comment")
-    public String write(@PathVariable Integer postId, Comment comment) { // x-www-form~~
+    public String write(@PathVariable Integer postId, Comment comment) {
         User principal = (User) session.getAttribute("principal");
 
         comment.setUser(principal);

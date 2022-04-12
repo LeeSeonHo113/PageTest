@@ -22,7 +22,6 @@
     <!-- 상세정보보기 끝 -->
 
     <!-- 댓글 시작 -->
-
     <div class="card">
         <form action="/s/post/{{postId}}/comment" method="post">
             <div class="card-body">
@@ -76,7 +75,7 @@
         //console.log(location.href);
         let postId = $("#postId").val();
         let response = await fetch(`/api/post/${postId}`);
-        let responseParse = await response.json();  // text(), json()
+        let responseParse = await response.json();
         console.log(responseParse);
         postInfoRender(responseParse);
     }

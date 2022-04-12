@@ -1,11 +1,10 @@
 package site.metacoding.pagetest.web.api.dto.post;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import site.metacoding.pagetest.domain.post.Post;
+import site.metacoding.pagetest.domain.user.User;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,7 +19,7 @@ public class WriteDto {
         post.setTitle(title);
         post.setContent(content);
         post.setUser(principal);
-        post.setPageCount(0); // 여기서 초기값 해주는게 나을듯!!
+        post.setPageCount(0); // 여기서 초기값 해주는게 나을 듯 함!!
         return post;
     }
 }

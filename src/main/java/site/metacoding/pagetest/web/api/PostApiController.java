@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.pagetest.domain.User;
 import site.metacoding.pagetest.domain.post.Post;
+import site.metacoding.pagetest.domain.user.User;
 import site.metacoding.pagetest.service.PostService;
 import site.metacoding.pagetest.web.api.dto.ResponseDto;
 import site.metacoding.pagetest.web.api.dto.post.DetailResponseDto;
@@ -32,10 +32,8 @@ public class PostApiController {
         return new ResponseDto<>(1, "성공", null);
     }
 
-    //
     @GetMapping("/api/post/{id}")
     public ResponseDto<?> detail(@PathVariable Integer id) {
-        //
 
         Post postEntity = postService.글상세보기(id);
         User principal = (User) session.getAttribute("principal");
@@ -43,16 +41,14 @@ public class PostApiController {
 
         if (principal != null) {
 
-            if (principal.getId() == postEntity.getUser().getId()) {
+            if (principal.getId() == postEntity.getId()) {
                 auth = true;
             }
         }
 
         DetailResponseDto detailResponseDto = new DetailResponseDto(postEntity, auth); // comment null
         return new ResponseDto<>(1, "성공", detailResponseDto); // comment 생성됨 = MessageConverter
-        //
     }
-    //
 
     @GetMapping("/api/post")
     public ResponseDto<?> list(Integer page) {

@@ -1,4 +1,4 @@
-package site.metacoding.pagetest.domain;
+package site.metacoding.pagetest.domain.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -9,4 +9,10 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     User mLogin(@Param("username") String username, @Param("password") String password);
 
     boolean existsByusername(String username);
+
+    // @Modifying
+    // @Query(value = "UPDATE user SET password = :password, email = :email, addr =
+    // :addr WHERE id = :id", nativeQuery = true)
+    // void mUpdate(@Param("password") String password, @Param("email") String
+    // email, @Param("addr") String addr, @Param("id") Integer id);
 }

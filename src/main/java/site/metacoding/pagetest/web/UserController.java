@@ -1,6 +1,5 @@
 package site.metacoding.pagetest.web;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.http.ResponseEntity;
@@ -23,6 +22,8 @@ public class UserController {
     // return "redirect:/";
     // }
 
+    // 웹브라우저 -> 회원가입 페이지 주기!!
+    // 앱 -> 회원가입 페이지 주기!!
     @GetMapping("/joinForm")
     public String joinForm() {
         return "user/joinForm";
