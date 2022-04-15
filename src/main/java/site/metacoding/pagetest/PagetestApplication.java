@@ -11,5 +11,4 @@ public class PagetestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PagetestApplication.class, args);
 	}
-
 }

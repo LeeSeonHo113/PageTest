@@ -1,10 +1,9 @@
 package site.metacoding.pagetest.web.api.dto.post;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import site.metacoding.pagetest.domain.User;
 import site.metacoding.pagetest.domain.post.Post;
 
 @AllArgsConstructor
